@@ -1,23 +1,41 @@
 import "./personalList.css"
-import { useContext } from "react";
-import { UsrCntx } from "../context/UserContext.jsx"
+import { useEffect, useState } from "react";
+import { getAllRegisters } from "../services/registerService";
+import { data } from "../services/useList";
 
-export function PersonalList() {
-    const { personal, error, isLoading } = useContext(UsrCntx);
-    console.log(personal);
-    if (isLoading) return (<div><h2>Please, wait...</h2></div>);
-    if (error) return (<div>{error}</div>)
+
+export function PersonalList({ url }) {
+
+    /* const [data, setData] = useState([])
+
+    const fetchData = async (url) => {
+        try {
+            const allusr = await getAllRegisters(url);
+            console.log(allusr);
+            setData(allusr)
+        } catch (err) {
+            console.error(err);
+            throw err;
+        }
+    };
+
+    useEffect(() => {
+        fetchData(url);
+    }, []) */
+
     return (
         <>
-            <h2 className="color-title">Listado de usuarios</h2>
-            <article>
-                {personal.map((prsnl, i) => (
-                    <ul key={i}>
+            {data.map((prsnl, i) => (
+                <article key={i}>
+                    <ol>
                         <li>{prsnl.name} {prsnl.lastName}</li>
                         <img src={prsnl.avatar}></img>
-                    </ul>
-                ))}
-            </article>
+                        <div>
+                            <button>Realizar Accion</button>
+                        </div>
+                    </ol>
+                </article>
+            ))}
         </>
     )
 }

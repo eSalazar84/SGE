@@ -1,18 +1,20 @@
 import React, { useContext } from "react";
 import "./Home.css"
 import Header from "../components/Header";
-import { PersonalList } from "../components/personalList";
 import { UsrCntx } from "../context/UserContext";
 
 function Home() {
 
     const { user } = useContext(UsrCntx);
-    console.log(user);
     return (
 
         <>
             <Header />
-            <PersonalList />
+            <main>
+                Bienvenido al sistema, aca le vamos a mostrar todo lo que puede hacer
+                <button>Agregar Alumno</button>
+                <button>Agregar Docente</button>
+            </main>
         </>
     )
 }
