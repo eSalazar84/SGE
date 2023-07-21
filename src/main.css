@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    --clr1: #006691;
+    --clr2: #2499c7;
+    --clr3: #40cfff;
+    --clr4: #94e7ff;
+    --clr5: #cdffff;
+    --grad: linear-gradient(to top right, var(--clr1), var(--clr2), var(--clr3), var(--clr4), var(--clr3), var(--clr2), var(--clr1));
+    overflow-y: scroll;
+}
