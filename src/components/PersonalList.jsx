@@ -1,12 +1,11 @@
 import "./personalList.css"
 import { useEffect, useState } from "react";
 import { getAllRegisters } from "../services/registerService";
-import { data } from "../services/useList";
 
 
 export function PersonalList({ url }) {
 
-    /* const [data, setData] = useState([])
+    const [data, setData] = useState([])
 
     const fetchData = async (url) => {
         try {
@@ -21,7 +20,7 @@ export function PersonalList({ url }) {
 
     useEffect(() => {
         fetchData(url);
-    }, []) */
+    }, [])
 
     return (
         <>

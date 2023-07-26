@@ -1,4 +1,5 @@
 import "./Login.css";
+import Footer from "../components/Footer";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UsrCntx } from "../context/UserContext";
@@ -37,16 +38,18 @@ function Login() {
 
     return (
         <>
-            <h1>Bienvenido al Sistema de Gestion de Legajos Escolar</h1>
-
-            <form action="" className="form-login-container" onSubmit={handleSubmit}>
-                <label htmlFor="email">e-mail
-                    <input type="email" name="email" id="email" onChange={handleChange} /></label>
-                <label htmlFor="password">password
-                    <input type="password" name="password" id="password" onChange={handleChange} /></label>
-                <input type="submit" value="Ingresar" />
-            </form>
-            {message}
+            <main className="login">
+                <h1 className="login-title">Bienvenido al Sistema de Gestion de Legajos Escolar</h1>
+                <form action="" className="login-form-container" onSubmit={handleSubmit}>
+                    <label htmlFor="email">e-mail
+                        <input type="email" name="email" id="email" onChange={handleChange} /></label>
+                    <label htmlFor="password">password
+                        <input type="password" name="password" id="password"  onChange={handleChange} /></label>
+                    <input type="submit" value="Ingresar" className="login-form-btn"/>
+                </form>
+                {message}
+            </main>
+            <Footer />
 
         </>
     )

@@ -1,7 +1,7 @@
 export const base_url_students = "../data/students.json"
 export const base_url_teachers = "../data/teachers.json"
 export const base_url_subjects = "../data/subjects.json"
-export const base_url_users = "../data/users.json"
+export const base_url_users = "https://64b16c09062767bc48262e69.mockapi.io/teachers"
 
 const controller = new AbortController();
 
@@ -43,7 +43,7 @@ export const deleteUserById = async id => {
     }
 };
 
-export const updateUserById = async (id, user) => {
+export const updateUserById = async (url, id, user) => {
     try {
         const res = await fetch(
             `${url}/${id}`,

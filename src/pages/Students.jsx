@@ -3,13 +3,14 @@ import "./Students.css";
 import Header from "../components/Header.jsx"
 import { PersonalList } from "../components/PersonalList.jsx";
 import { base_url_students } from "../services/registerService.js";
+import Footer from "../components/Footer";
 
 function Students() {
     return (
         <>
-            <Header />
-            <h3 className="color-title">Listado de Alumnos</h3>
+            <Header title={"Listado de Alumnos"} />
             <PersonalList url={base_url_students} />
+            <Footer/>
         </>
     )
 }
