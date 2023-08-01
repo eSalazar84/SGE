@@ -1,4 +1,5 @@
 import "./Login.css";
+import logo from "../assets/logo-SGE.png"
 import Footer from "../components/Footer";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
@@ -39,13 +40,15 @@ function Login() {
     return (
         <>
             <main className="login">
-                <h1 className="login-title">Bienvenido al Sistema de Gestion de Legajos Escolar</h1>
+                <div className="img-logo">
+                    <img src={logo} alt="sge-logo" />
+                </div>
                 <form action="" className="login-form-container" onSubmit={handleSubmit}>
                     <label htmlFor="email">e-mail
-                        <input type="email" name="email" id="email" onChange={handleChange} /></label>
+                        <input type="email" name="email" id="email" className="login-form-input" onChange={handleChange} /></label>
                     <label htmlFor="password">password
-                        <input type="password" name="password" id="password"  onChange={handleChange} /></label>
-                    <input type="submit" value="Ingresar" className="login-form-btn"/>
+                        <input type="password" name="password" id="password" className="login-form-input" onChange={handleChange} /></label>
+                    <input type="submit" value="Ingresar" className="login-form-btn" />
                 </form>
                 {message}
             </main>
